@@ -97,6 +97,20 @@ include_directories(Libraries/Service/CpuGeneric/SysSe/Comm)
 include_directories(Libraries/Service/CpuGeneric/SysSe/General)
 include_directories(Libraries/Service/CpuGeneric/SysSe/Math)
 include_directories(Libraries/Service/CpuGeneric/SysSe/Time)
+include_directories(packages/nnom/examples/keyword_spotting)
+include_directories(packages/nnom/examples/mnist-cnn/mcu)
+include_directories(packages/nnom/examples/mnist-densenet)
+include_directories(packages/nnom/examples/mnist-simple)
+include_directories(packages/nnom/examples/mnist-simple/mcu)
+include_directories(packages/nnom/examples/octave-conv)
+include_directories(packages/nnom/examples/rnn-denoise)
+include_directories(packages/nnom/examples/uci-har-rnn)
+include_directories(packages/nnom/examples/uci-inception)
+include_directories(packages/nnom/inc)
+include_directories(packages/nnom/inc/layers)
+include_directories(packages/nnom/port)
+include_directories(SmartCar)
+include_directories(source)
 
 add_executable(HITSIC_TC264DA_ADS
         Configurations/Debug/sync_on_halt.c
@@ -575,5 +589,135 @@ add_executable(HITSIC_TC264DA_ADS
         Libraries/Service/CpuGeneric/SysSe/Time/Ifx_DateTime.h
         Libraries/aurix_pin_mappings.c
         Libraries/aurix_pin_mappings.h
+        packages/nnom/examples/auto_test/main.c
+        packages/nnom/examples/keyword_spotting/kws_weights.h
+        packages/nnom/examples/keyword_spotting/main.c
+        packages/nnom/examples/keyword_spotting/mfcc.c
+        packages/nnom/examples/keyword_spotting/mfcc.h
+        packages/nnom/examples/mnist-cnn/mcu/main_cnn.c
+        packages/nnom/examples/mnist-cnn/mcu/weights_cnn.h
+        packages/nnom/examples/mnist-densenet/main.c
+        packages/nnom/examples/mnist-densenet/weights.h
+        packages/nnom/examples/mnist-simple/mcu/image.h
+        packages/nnom/examples/mnist-simple/mcu/main.c
+        packages/nnom/examples/mnist-simple/mcu/weights.h
+        packages/nnom/examples/mnist-simple/image.h
+        packages/nnom/examples/mnist-simple/weights.h
+        packages/nnom/examples/octave-conv/image.h
+        packages/nnom/examples/octave-conv/main.c
+        packages/nnom/examples/octave-conv/weights.h
+        packages/nnom/examples/rnn-denoise/denoise_weights.h
+        packages/nnom/examples/rnn-denoise/equalizer_coeff.h
+        packages/nnom/examples/rnn-denoise/main.c
+        packages/nnom/examples/rnn-denoise/main_arm.c
+        packages/nnom/examples/rnn-denoise/mfcc.c
+        packages/nnom/examples/rnn-denoise/mfcc.h
+        packages/nnom/examples/rnn-denoise/wav.h
+        packages/nnom/examples/rnn-denoise/weights.h
+        packages/nnom/examples/uci-har-rnn/main.c
+        packages/nnom/examples/uci-har-rnn/weights.h
+        packages/nnom/examples/uci-inception/main.c
+        packages/nnom/examples/uci-inception/uci_weights.h
+        packages/nnom/inc/layers/nnom_activation.h
+        packages/nnom/inc/layers/nnom_avgpool.h
+        packages/nnom/inc/layers/nnom_baselayer.h
+        packages/nnom/inc/layers/nnom_concat.h
+        packages/nnom/inc/layers/nnom_conv2d.h
+        packages/nnom/inc/layers/nnom_conv2d_trans.h
+        packages/nnom/inc/layers/nnom_cropping.h
+        packages/nnom/inc/layers/nnom_dense.h
+        packages/nnom/inc/layers/nnom_dw_conv2d.h
+        packages/nnom/inc/layers/nnom_flatten.h
+        packages/nnom/inc/layers/nnom_global_pool.h
+        packages/nnom/inc/layers/nnom_gru_cell.h
+        packages/nnom/inc/layers/nnom_input.h
+        packages/nnom/inc/layers/nnom_lambda.h
+        packages/nnom/inc/layers/nnom_lstm_cell.h
+        packages/nnom/inc/layers/nnom_matrix.h
+        packages/nnom/inc/layers/nnom_maxpool.h
+        packages/nnom/inc/layers/nnom_output.h
+        packages/nnom/inc/layers/nnom_rnn.h
+        packages/nnom/inc/layers/nnom_simple_cell.h
+        packages/nnom/inc/layers/nnom_softmax.h
+        packages/nnom/inc/layers/nnom_sumpool.h
+        packages/nnom/inc/layers/nnom_upsample.h
+        packages/nnom/inc/layers/nnom_zero_padding.h
+        packages/nnom/inc/nnom.h
+        packages/nnom/inc/nnom_layers.h
+        packages/nnom/inc/nnom_local.h
+        packages/nnom/inc/nnom_tensor.h
+        packages/nnom/inc/nnom_utils.h
+        packages/nnom/port/nnom_port.h
+        packages/nnom/src/backends/nnom_local.c
+        packages/nnom/src/backends/nnom_local_q15.c
+        packages/nnom/src/core/nnom.c
+        packages/nnom/src/core/nnom_layers.c
+        packages/nnom/src/core/nnom_tensor.c
+        packages/nnom/src/core/nnom_utils.c
+        packages/nnom/src/layers/nnom_activation.c
+        packages/nnom/src/layers/nnom_avgpool.c
+        packages/nnom/src/layers/nnom_baselayer.c
+        packages/nnom/src/layers/nnom_concat.c
+        packages/nnom/src/layers/nnom_conv2d.c
+        packages/nnom/src/layers/nnom_conv2d_trans.c
+        packages/nnom/src/layers/nnom_cropping.c
+        packages/nnom/src/layers/nnom_dense.c
+        packages/nnom/src/layers/nnom_dw_conv2d.c
+        packages/nnom/src/layers/nnom_flatten.c
+        packages/nnom/src/layers/nnom_global_pool.c
+        packages/nnom/src/layers/nnom_gru_cell.c
+        packages/nnom/src/layers/nnom_input.c
+        packages/nnom/src/layers/nnom_lambda.c
+        packages/nnom/src/layers/nnom_lstm_cell.c
+        packages/nnom/src/layers/nnom_matrix.c
+        packages/nnom/src/layers/nnom_maxpool.c
+        packages/nnom/src/layers/nnom_output.c
+        packages/nnom/src/layers/nnom_rnn.c
+        packages/nnom/src/layers/nnom_simple_cell.c
+        packages/nnom/src/layers/nnom_softmax.c
+        packages/nnom/src/layers/nnom_sumpool.c
+        packages/nnom/src/layers/nnom_upsample.c
+        packages/nnom/src/layers/nnom_zero_padding.c
+        SmartCar/common.c
+        SmartCar/common.h
+        SmartCar/SmartCar_ADC.c
+        SmartCar/SmartCar_ADC.h
+        SmartCar/SmartCar_Assert.c
+        SmartCar/SmartCar_Assert.h
+        SmartCar/SmartCar_Encoder.c
+        SmartCar/SmartCar_Encoder.h
+        SmartCar/SmartCar_Eru.c
+        SmartCar/SmartCar_Eru.h
+        SmartCar/SmartCar_EruDma.c
+        SmartCar/SmartCar_EruDma.h
+        SmartCar/SmartCar_Flash.c
+        SmartCar/SmartCar_Flash.h
+        SmartCar/SmartCar_FONT.c
+        SmartCar/SmartCar_FONT.h
+        SmartCar/SmartCar_GPIO.c
+        SmartCar/SmartCar_GPIO.h
+        SmartCar/SmartCar_Hardware_IIC.c
+        SmartCar/SmartCar_Hardware_IIC.h
+        SmartCar/SmartCar_MPU.c
+        SmartCar/SmartCar_MPU.h
+        SmartCar/SmartCar_MT9V034.c
+        SmartCar/SmartCar_MT9V034.h
+        SmartCar/SmartCar_Oled.c
+        SmartCar/SmartCar_Oled.h
+        SmartCar/SmartCar_PIT.c
+        SmartCar/SmartCar_PIT.h
+        SmartCar/SmartCar_Pwm.c
+        SmartCar/SmartCar_Pwm.h
+        SmartCar/SmartCar_Soft_IIC.c
+        SmartCar/SmartCar_Soft_IIC.h
+        SmartCar/SmartCar_Systick.c
+        SmartCar/SmartCar_Systick.h
+        SmartCar/SmartCar_Uart.c
+        SmartCar/SmartCar_Uart.h
+        SmartCar/SmartCar_Upload.c
+        SmartCar/SmartCar_Upload.h
         source/Cpu0_Main.c
-        source/Cpu1_Main.c)
+        source/Cpu0_Main.h
+        source/Cpu1_Main.c
+        source/SmartCar_Isr.c
+        source/SmartCar_Isr.h)
