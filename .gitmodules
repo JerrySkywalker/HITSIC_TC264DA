@@ -1,0 +1,3 @@
+[submodule "HITSIC_TC264DA_ADS/packages/nnom"]
+	path = HITSIC_TC264DA_ADS/packages/nnom
+	url = https://github.com/HITSIC/nnom.git
